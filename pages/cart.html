@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="../style/cart.css">
+        
+        <title>Enquadrado</title>
+    </head>
+
+    <body>
+        <header id="navbar">
+            <div id="navbar-title">
+                Enquadrado
+            </div>
+        </header>
+
+        <!-- Seção com o formulário para preencher os dados -->
+        <section id="user-data">
+            <h1>Seus dados</h1>
+            <div id="user-data--line"></div>
+            
+            <form action="">
+                <input type="text" name="nome" placeholder="Nome completo">
+                <div class="form-input-inline">
+                    <input type="text" name="endereco" placeholder="Endereço">
+                    <input class="form-input-inline-number" type="text" name="numero" placeholder="Número">
+                </div>
+                <input type="text" name="cidade" placeholder="Cidade">
+            </form>
+        </section>
+
+        <!-- Seção com o resumo da compra -->
+        <section id="resume-data">
+            <div class="resume-data--item">
+                <div class="item-specs">
+                    <div class="item-image">
+                    </div>
+                    <div class="item-description">
+                        Poster Mononoke Hime
+                        <p>Dimensões A4(21,0 x 29,7 cm) | Sem moldura </p>
+                    </div>
+                </div>
+
+                <div class="item-price">
+                    R$ 350,00
+                </div>
+            </div>
+
+            <div class="resume-data--preco">
+                <div class="preco-frete">
+                    <strong>Frete -</strong>
+                    <span>R$ 14,99</span>
+                </div>
+                <div class="preco-total">
+                    <strong>TOTAL - </strong> 
+                    <span>R$ 364,99 </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botões -->
+        <section id="buttons">
+            <button class="button button-finalizar">
+                Finalizar compra
+            </button>
+
+            <button class="button button-voltar">
+                Voltar às compras
+            </button>
+        </section>
+
+        <!-- Footer apenas com as redes sociais da loja -->
+        <footer>
+            <div class="footer-icon footer-icon--fb">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+
+            <div class="footer-icon footer-icon--ig">
+                <i class="fab fa-instagram"></i>
+            </div>
+
+            <div class="footer-icon footer-icon--tt">
+                <i class="fab fa-twitter"></i>
+            </div>
+
+            <div class="footer-icon footer-icon--yt">
+                <i class="fab fa-youtube"></i>
+            </div>
+        </footer>
+    </body>
+</html>
