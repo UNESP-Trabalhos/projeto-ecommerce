@@ -495,12 +495,22 @@ window.addEventListener("load", function(event) {
     })
 
 });
-/*
-let botaoFinalizar = document.getElementsByClassName("menu4")
+
+let botaoFinalizar = document.getElementById("carrinho")
 
 botaoFinalizar.addEventListener("click", ()=>{
+    dadosTransferidos.push("Rato")
     let enviarParaDetalhes = JSON.stringify(dadosTransferidos);
     console.log(enviarParaDetalhes)
 	sessionStorage.setItem('dados', enviarParaDetalhes);
-    window.location.href = "./Detalhes/index.html"
-})*/
+    window.location.href = "./pages/cart.html"
+})
+
+
+let botaoTeste = document.getElementById("test")
+
+botaoTeste.addEventListener("click", ()=>{
+    let dados = JSON.parse(sessionStorage.getItem('dados'));
+    console.log(dados);
+	sessionStorage.setItem('dados', dados);
+})
