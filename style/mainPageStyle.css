@@ -145,14 +145,13 @@ body{
 }
 
 .productImg{
-    height: 150px;
-    width: 150px;
-    margin: 25px;
-    
+    height: 330px;
+    width: 250px;
+    margin: 10px; 
 }
 
 .products{
-    width: 205px;
+    width: 265px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -160,7 +159,7 @@ body{
     justify-content: center;
     border-width: medium;
     border-style: solid;
-    border-color: #00f;
+    border-color: #FFF;
 }
 
 .texto{
