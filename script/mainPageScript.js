@@ -37,6 +37,25 @@ const next = () => {
 document.querySelector('#previous').addEventListener('click', previous)
 document.querySelector('#next').addEventListener('click', next)
 
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onmouseover = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
 // *********** PARA OS ITENS DO SITE
 
 let data = [{
@@ -215,9 +234,9 @@ function main(){
         let title = document.createElement("h3");
         let price = document.createElement("h4")
         let button = document.createElement("button");
-        let botaoZero = document.getElementById("0")
         button.innerHTML = "Adicionar ao Carrinho";
         button.id = `${i}`
+        button.classList.add  ("buttonProducts");
         title.innerHTML = data[i].name;
         image.src = data[i].image;
         image.classList.add("productImg");

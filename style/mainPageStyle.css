@@ -9,6 +9,11 @@ header{
     background-color: #014F86;
 }
 
+body{
+    background: #f0f2f5;
+    font-family: "Roboto", 'sans-serif';
+}
+
 h1{
     display: flex;
     justify-content: center;
@@ -77,11 +82,49 @@ span{
     color: blanchedalmond;
 }
 
-/* ==================== BODY ==================== */
-
-body{
-    background: #f0f2f5;
-    font-family: "Roboto", 'sans-serif';
+.dropbtn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.07);
+    font-size: large;
+    border-color: rgba(0,0,0,0.07);
+    border: none;
+}
+  
+#dropdown {
+    position: relative;
+    display: inline-block;
+ }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    background-color: #014F86;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {
+    border-color: rgba(0,0,0,0.1);
+    color: #f1f1f1;   
+}
+  
+#dropdown:hover .dropdown-content {display: block;}
+  
+#dropdown:hover .dropbtn { 
+    color: #f1f1f1;   
 }
 
 /* ========== Carrosel ========== */
@@ -166,32 +209,29 @@ body{
 }
 
 .texto{
-    margin: 15px;
-    line-height: 30px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.buttonProduct{
+.buttonProducts{
+    padding: 10px;
     margin: 10px;
 }
 
-#buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 53px;
-}
-
-.button {
+button {
     font-weight: bold;
     font-size: 15px;
     background: #014F86;
-    padding: 10px;
     border-radius: 10px;
     border: thistle;
     cursor: pointer;
     transition-duration: .3s;
 }
 
-.button:hover {
+.button:hover , .buttonProducts:hover {
     color: rgb(225, 226, 228);
     background: #01233b;
     box-shadow: 1px 1px 8px rgb(47, 47, 48);

@@ -84,7 +84,23 @@ input:focus{
     background: #F5F3F4;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    height: 240px;
 }
+
+#resume-data ::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+#resume-data ::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+ }
+  
+  #resume-data ::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
 
 .resume-data--item {
     padding: 10px 20px;
