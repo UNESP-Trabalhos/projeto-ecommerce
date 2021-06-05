@@ -1,4 +1,3 @@
-
 // *********** PARA OS CARROSEL
 
 const images = [
@@ -131,10 +130,81 @@ let data = [{
     "image": "./images/geo.png",
 }];
 
-
 const produtos = document.getElementById("products-list")
 const filterButton = document.getElementById("menu")
 let dadosTransferidos = []
+
+// FILTRANDO OS TOP 10 MAIS VENDIDOS 
+
+const filterTop = document.getElementById("top10")
+
+filterTop.addEventListener('click', ()=>{
+    let divProduct = document.querySelectorAll("div.products")
+    
+    for(let a=0; a<divProduct.length; a++) {
+        produtos.removeChild(divProduct[a])
+    }
+
+    for(i=4; i<14; i++){
+        let divProduct = document.createElement("div");
+        let image = document.createElement("img");
+        let text = document.createElement("div");
+        let title = document.createElement("h3");
+        let price = document.createElement("h4")
+        let button = document.createElement("button");
+        button.innerHTML = "Adicionar ao Carrinho";
+        button.id = `${i}`
+        title.innerHTML = data[i].name;
+        image.src = data[i].image;
+        image.classList.add("productImg");
+        price.innerHTML = "R$ " + data[i].price;
+        text.appendChild(title);
+        text.appendChild(price);
+        text.classList.add  ("texto");
+        divProduct.appendChild(image);
+        divProduct.appendChild(text);
+        divProduct.appendChild(button);
+        divProduct.classList.add("products");
+        produtos.appendChild(divProduct);
+    }
+})
+
+// FILTRANDO OS MAIS PROMOÇÕES 
+
+
+const filterPromo = document.getElementById("promocoes")
+
+filterPromo.addEventListener('click', ()=>{
+    let divProduct = document.querySelectorAll("div.products")
+    
+    for(let a=0; a<divProduct.length; a++) {
+        produtos.removeChild(divProduct[a])
+    }
+
+    for(i=3; i<9; i++){
+        let divProduct = document.createElement("div");
+        let image = document.createElement("img");
+        let text = document.createElement("div");
+        let title = document.createElement("h3");
+        let price = document.createElement("h4")
+        let button = document.createElement("button");
+        button.innerHTML = "Adicionar ao Carrinho";
+        button.id = `${i}`
+        title.innerHTML = data[i].name;
+        image.src = data[i].image;
+        image.classList.add("productImg");
+        price.innerHTML = "R$ " + data[i].price;
+        text.appendChild(title);
+        text.appendChild(price);
+        text.classList.add  ("texto");
+        divProduct.appendChild(image);
+        divProduct.appendChild(text);
+        divProduct.appendChild(button);
+        divProduct.classList.add("products");
+        produtos.appendChild(divProduct);
+    }
+})
+
 
 function main(){
 
