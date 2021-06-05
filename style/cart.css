@@ -25,12 +25,18 @@ header {
 #navbar-title {
     position: absolute;
     width: 100%;
-    margin-top: 29px;
+    margin-top: 20px;
     text-align: center;
 
     font-weight: 700;
     font-size: 36px;
     line-height: 42,19px;
+}
+
+#aviso{
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
 }
 
 section {

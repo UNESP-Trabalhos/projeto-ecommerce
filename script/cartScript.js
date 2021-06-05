@@ -19,38 +19,23 @@ let nome = document.getElementById('nome');
 let endereco = document.getElementById('endereco');
 let cidade = document.getElementById('cidade');
 let estado = document.getElementById('estado');
-let botao = document.getElementById("teste")
+let botao = document.getElementById("finalizar")
 
 botao.addEventListener('click', ()=>{
     let bool = true
-    if(nome.value == ""){
-        alert("Preencha o Valor Nome")
-        bool = false
-    }
-    if(endereco.value == ""){
-        alert("Preencha o Valor Endereço")
-        bool = false
-    }
-    if(cidade.value == ""){
-        alert("Preencha o Valor Cidade")
-        bool = false
-    }
-    if(estado.value == ""){
-        alert("Preencha o Valor Estado")
-        bool = false
-    }
+   
     
     if(bool == true){
-        dadosUsuario[0].Nome = nome.value
+        /*dadosUsuario[0].Nome = nome.value
         dadosUsuario[0].Endereco = endereco.value
         dadosUsuario[0].Cidade = cidade.value
-        dadosUsuario[0].Estado = estado.value
+        dadosUsuario[0].Estado = estado.value*/
         let dados_selecionados = []
         dados_selecionados.push(dadosUsuario[0])
         let para_enviar = JSON.stringify(dados_selecionados);
         console.log(para_enviar)
 		sessionStorage.setItem('meus_dados', para_enviar);
-        window.location.href = "../Finalizar/index.html"
+        window.location.href = "./confirmation.html"
     }
 })
 

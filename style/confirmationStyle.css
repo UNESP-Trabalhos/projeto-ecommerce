@@ -34,6 +34,11 @@ header {
     font-weight: 300;
 }
 
+#tempoFrete{
+    display: flex;
+    justify-content: center;
+}
+
 
 #resume-data {
     background: #F5F3F4;
