@@ -38,23 +38,6 @@ document.querySelector('#previous').addEventListener('click', previous)
 document.querySelector('#next').addEventListener('click', next)
 
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onmouseover = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
 
 // *********** PARA OS ITENS DO SITE
 
@@ -153,18 +136,20 @@ const produtos = document.getElementById("products-list")
 const filterButton = document.getElementById("menu")
 let dadosTransferidos = []
 
-// FILTRANDO OS TOP 10 MAIS VENDIDOS 
+// FUNCAO PARA LIMPAR
 
-const filterTop = document.getElementById("top10")
-
-filterTop.addEventListener('click', ()=>{
+function limpar(){
     let divProduct = document.querySelectorAll("div.products")
     
     for(let a=0; a<divProduct.length; a++) {
         produtos.removeChild(divProduct[a])
     }
+}
 
-    for(i=4; i<14; i++){
+// FUNCAO PARA FILTRAR
+
+function filtrar(inicial, final){
+    for(i=inicial; i<final; i++){
         let divProduct = document.createElement("div");
         let image = document.createElement("img");
         let text = document.createElement("div");
@@ -173,6 +158,7 @@ filterTop.addEventListener('click', ()=>{
         let button = document.createElement("button");
         button.innerHTML = "Adicionar ao Carrinho";
         button.id = `${i}`
+        button.classList.add("buttonProducts");
         title.innerHTML = data[i].name;
         image.src = data[i].image;
         image.classList.add("productImg");
@@ -186,47 +172,58 @@ filterTop.addEventListener('click', ()=>{
         divProduct.classList.add("products");
         produtos.appendChild(divProduct);
     }
+}
+
+// FILTRANDO OS TOP 10 MAIS VENDIDOS 
+const filterTop = document.getElementById("top10")
+filterTop.addEventListener('click', ()=>{
+    limpar();
+    filtrar(4, 14);
 })
 
 // FILTRANDO OS MAIS PROMOÇÕES 
-
-
 const filterPromo = document.getElementById("promocoes")
-
 filterPromo.addEventListener('click', ()=>{
-    let divProduct = document.querySelectorAll("div.products")
-    
-    for(let a=0; a<divProduct.length; a++) {
-        produtos.removeChild(divProduct[a])
-    }
-
-    for(i=3; i<9; i++){
-        let divProduct = document.createElement("div");
-        let image = document.createElement("img");
-        let text = document.createElement("div");
-        let title = document.createElement("h3");
-        let price = document.createElement("h4")
-        let button = document.createElement("button");
-        button.innerHTML = "Adicionar ao Carrinho";
-        button.id = `${i}`
-        title.innerHTML = data[i].name;
-        image.src = data[i].image;
-        image.classList.add("productImg");
-        price.innerHTML = "R$ " + data[i].price;
-        text.appendChild(title);
-        text.appendChild(price);
-        text.classList.add  ("texto");
-        divProduct.appendChild(image);
-        divProduct.appendChild(text);
-        divProduct.appendChild(button);
-        divProduct.classList.add("products");
-        produtos.appendChild(divProduct);
-    }
+    limpar();   
+    filtrar(3, 9);
 })
 
+// FILTRANDO OS ANIMAIS
+const filterAnimals = document.getElementById("animal")
+filterAnimals.addEventListener('click', ()=>{
+    limpar();
+    filtrar(9,12);
+})
+
+//FILTRANDO OS FILMES
+const filterFilmes = document.getElementById("filme")
+filterFilmes.addEventListener('click', ()=>{
+    limpar();
+    filtrar(0,3);
+})
+
+//FILTRANDO AS FRASES 
+const filterFrases = document.getElementById("frase")
+filterFrases.addEventListener('click', ()=>{
+    limpar();
+    filtrar(6,9);
+})
+
+//FILTRANDO OS Geometricos
+const filterGeometricos = document.getElementById("geometrico")
+filterGeometricos.addEventListener('click', ()=>{
+    limpar();
+    filtrar(12,15);
+})
+
+//FILTRANDO AS serie 
+const filterSeries = document.getElementById("serie")
+filterSeries.addEventListener('click', ()=>{
+    limpar();
+    filtrar(3,6);
+})
 
 function main(){
-
     for(i=0; i<20; i++){
         let divProduct = document.createElement("div");
         let image = document.createElement("img");
@@ -244,91 +241,6 @@ function main(){
         text.appendChild(title);
         text.appendChild(price);
         text.classList.add  ("texto");
-        divProduct.appendChild(image);
-        divProduct.appendChild(text);
-        divProduct.appendChild(button);
-        divProduct.classList.add("products");
-        produtos.appendChild(divProduct);
-    }
-}
-
-function filter(){
-    let opCelular = document.getElementById("opCelular")
-    let opTime = document.getElementById("opTime")
-    let opFruit = document.getElementById("opFruit")
-    let opGame = document.getElementById("opGame")
-    
-    let temp = []
-    let i=0, j=0, k=0
-
-    let divProduct = document.querySelectorAll("div.products")
-    
-    for(let a=0; a<divProduct.length; a++) {
-        produtos.removeChild(divProduct[a])
-    }
-
-    if(opCelular.checked){
-        i = 0
-        j = 0
-        while(i<5){
-            if(data[i].category == "Celulares"){
-                temp[j] = data[i]
-                j++
-            }
-            i++
-        }
-    }
-    else if(opFruit.checked){
-        i = 5
-        j = 5
-        while(i<10){
-            if(data[i].category == "Frutas & Legumes"){
-                temp[j] = data[i]
-                j++
-            }
-            i++
-        }
-    }
-    else if(opGame.checked){
-        i = 10
-        j = 10
-        while(i<15){
-            if(data[i].category == "Jogos"){
-                temp[j] = data[i]
-                j++
-            }
-            i++
-        }
-    }
-    else if(opTime.checked){
-        i = 15
-        j = 15
-        while(i<20){
-            if(data[i].category == "Camisetas de Time"){
-                temp[j] = data[i]
-                j++
-            }
-            i++
-        }
-    }
-    
-    i = i -5
-    for(k = i; k<j; k++){
-        let divProduct = document.createElement("div");
-        let image = document.createElement("img");
-        let text = document.createElement("div");
-        let title = document.createElement("h3");
-        let price = document.createElement("h4")
-        let button = document.createElement("button");
-        button.innerHTML = "Adicionar ao Carrinho";
-        button.id = `${i}`  
-        title.innerHTML = temp[k].name;
-        image.src = temp[k].image;
-        image.classList.add("productImg");
-        price.innerHTML = "R$ " + temp[k].price;
-        text.appendChild(title);
-        text.appendChild(price);
-        text.classList.add("texto");
         divProduct.appendChild(image);
         divProduct.appendChild(text);
         divProduct.appendChild(button);
