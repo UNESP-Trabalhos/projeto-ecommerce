@@ -438,7 +438,15 @@ window.addEventListener("load", function(event) {
 let botaoFinalizar = document.getElementById("carrinho")
 
 botaoFinalizar.addEventListener("click", ()=>{
+    let i = 0
+    let voltarCarrinho = JSON.parse(sessionStorage.getItem('voltou'));
+    if(voltarCarrinho != null || voltarCarrinho != undefined){
+        while(i < voltarCarrinho.length){
+            dadosTransferidos.unshift(voltarCarrinho[i])
+            i++
+        }
+    }
     let enviarParaDetalhes = JSON.stringify(dadosTransferidos);
-	sessionStorage.setItem('dados', enviarParaDetalhes);
+    sessionStorage.setItem('dados', enviarParaDetalhes);
     window.location.href = "./pages/cart.html"
 })

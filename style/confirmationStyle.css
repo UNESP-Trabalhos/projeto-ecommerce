@@ -17,6 +17,11 @@ header {
     background-color: #014F86;
 }
 
+h2{
+    padding-left: 35px;
+    padding-top: 35px;
+}
+
 #navbar-title {
     position: absolute;
     width: 100%;

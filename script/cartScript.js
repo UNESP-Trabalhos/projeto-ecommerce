@@ -2,9 +2,10 @@ let botaoVoltar = document.getElementById("voltar")
 const dados = JSON.parse(sessionStorage.getItem('dados'));
 
 botaoVoltar.addEventListener("click", ()=>{
-    let dados = JSON.parse(sessionStorage.getItem('dados'));
-    console.log(dados);
-	sessionStorage.setItem('dados', dados);
+    if(dados.length != 0){
+        let voltarCompras = JSON.stringify(dados);
+	    sessionStorage.setItem('voltou', voltarCompras);
+    }
     window.location.href = "../mainPage.html"
 })
 
@@ -62,39 +63,40 @@ function main(){
         Cardiv.innerHTML = `<h2>Seu Carrinho está Vazio</h2>`
     }
 
-    for(k = 0; k<dados.length; k++){
-        let divProduct = document.createElement("div");
-        let divSpecs = document.createElement("div");
-        let divPrice = document.createElement("div");
-        let divTitle = document.createElement("h3");
-        let image = document.createElement("img");
-        divProduct.classList.add("resume-data--item");
-        divSpecs.classList.add("item-specs");
-        divPrice.classList.add("item-price");
-        divTitle.classList.add("item-description");
-        image.classList.add("item-image");
-        divTitle.innerHTML = dados[k].name;
-        image.src = "." + dados[k].image;
-        divPrice.innerHTML = "R$ " + dados[k].price;
-        soma = soma + dados[k].price
-        divSpecs.appendChild(image);
-        divSpecs.appendChild(divTitle);
-        divProduct.appendChild(divSpecs);
-        divProduct.appendChild(divPrice);
-        Cardiv.appendChild(divProduct);
+    else{
+        for(k = 0; k<dados.length; k++){
+            let divProduct = document.createElement("div");
+            let divSpecs = document.createElement("div");
+            let divPrice = document.createElement("div");
+            let divTitle = document.createElement("h3");
+            let image = document.createElement("img");
+            divProduct.classList.add("resume-data--item");
+            divSpecs.classList.add("item-specs");
+            divPrice.classList.add("item-price");
+            divTitle.classList.add("item-description");
+            image.classList.add("item-image");
+            divTitle.innerHTML = dados[k].name;
+            image.src = "." + dados[k].image;
+            divPrice.innerHTML = "R$ " + dados[k].price;
+            soma = soma + dados[k].price
+            divSpecs.appendChild(image);
+            divSpecs.appendChild(divTitle);
+            divProduct.appendChild(divSpecs);
+            divProduct.appendChild(divPrice);
+            Cardiv.appendChild(divProduct);
+        }
+    
+        let divPrecoFinal = document.createElement("div");
+        let divPrecoFrete = document.createElement("div");
+        let divPrecoTotal = document.createElement("div");
+        divPrecoFinal.classList.add("resume-data--preco");
+        divPrecoFrete.classList.add("preco-frete");
+        divPrecoTotal.classList.add("preco-total");
+        divPrecoFrete.innerHTML = "Frete: R$ 14,99";
+        soma = soma + 14.99;
+        divPrecoTotal.innerHTML = "TOTAL: R$ " + soma;
+        divPrecoFinal.appendChild(divPrecoFrete)
+        divPrecoFinal.appendChild(divPrecoTotal)
+        Cardiv.appendChild(divPrecoFinal);
     }
-
-    let divPrecoFinal = document.createElement("div");
-    let divPrecoFrete = document.createElement("div");
-    let divPrecoTotal = document.createElement("div");
-    divPrecoFinal.classList.add("resume-data--preco");
-    divPrecoFrete.classList.add("preco-frete");
-    divPrecoTotal.classList.add("preco-total");
-    divPrecoFrete.innerHTML = "Frete - R$ 14,99";
-    soma = soma + 14.99;
-    divPrecoTotal.innerHTML = "TOTAL - R$ " + soma;
-    divPrecoFinal.appendChild(divPrecoFrete)
-    divPrecoFinal.appendChild(divPrecoTotal)
-    Cardiv.appendChild(divPrecoFinal);
-
 }
