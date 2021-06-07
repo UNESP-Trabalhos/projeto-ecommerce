@@ -174,6 +174,55 @@ function filtrar(inicial, final){
     }
 }
 
+// FILTRANDO OS TOP 10 MAIS VENDIDOS 
+const filterTop = document.getElementById("top10")
+filterTop.addEventListener('click', ()=>{
+    limpar();
+    filtrar(4, 14);
+})
+
+// FILTRANDO OS MAIS PROMOÇÕES 
+const filterPromo = document.getElementById("promocoes")
+filterPromo.addEventListener('click', ()=>{
+    limpar();   
+    filtrar(3, 9);
+})
+
+// FILTRANDO OS ANIMAIS
+const filterAnimals = document.getElementById("animal")
+filterAnimals.addEventListener('click', ()=>{
+    limpar();
+    filtrar(9,12);
+})
+
+//FILTRANDO OS FILMES
+const filterFilmes = document.getElementById("filme")
+filterFilmes.addEventListener('click', ()=>{
+    limpar();
+    filtrar(0,3);
+})
+
+//FILTRANDO AS FRASES 
+const filterFrases = document.getElementById("frase")
+filterFrases.addEventListener('click', ()=>{
+    limpar();
+    filtrar(6,9);
+})
+
+//FILTRANDO OS Geometricos
+const filterGeometricos = document.getElementById("geometrico")
+filterGeometricos.addEventListener('click', ()=>{
+    limpar();
+    filtrar(12,15);
+})
+
+//FILTRANDO AS serie 
+const filterSeries = document.getElementById("serie")
+filterSeries.addEventListener('click', ()=>{
+    limpar();
+    filtrar(3,6);
+})
+
 function main(){
     for(i=0; i<20; i++){
         let divProduct = document.createElement("div");
@@ -201,56 +250,6 @@ function main(){
 }
 
 window.addEventListener("load", function(event) {
-
-    // FILTRANDO OS TOP 10 MAIS VENDIDOS 
-    const filterTop = document.getElementById("top10")
-    filterTop.addEventListener('click', ()=>{
-        limpar();
-        filtrar(4, 14);
-    })
-
-    // FILTRANDO OS MAIS PROMOÇÕES 
-    const filterPromo = document.getElementById("promocoes")
-    filterPromo.addEventListener('click', ()=>{
-        limpar();   
-        filtrar(3, 9);
-    })
-
-    // FILTRANDO OS ANIMAIS
-    const filterAnimals = document.getElementById("animal")
-    filterAnimals.addEventListener('click', ()=>{
-        limpar();
-        filtrar(9,12);
-    })
-
-    //FILTRANDO OS FILMES
-    const filterFilmes = document.getElementById("filme")
-    filterFilmes.addEventListener('click', ()=>{
-        limpar();
-        filtrar(0,3);
-    })
-
-    //FILTRANDO AS FRASES 
-    const filterFrases = document.getElementById("frase")
-    filterFrases.addEventListener('click', ()=>{
-        limpar();
-        filtrar(6,9);
-    })
-
-    //FILTRANDO OS Geometricos
-    const filterGeometricos = document.getElementById("geometrico")
-    filterGeometricos.addEventListener('click', ()=>{
-        limpar();
-        filtrar(12,15);
-    })
-
-    //FILTRANDO AS serie 
-    const filterSeries = document.getElementById("serie")
-    filterSeries.addEventListener('click', ()=>{
-        limpar();
-        filtrar(3,6);
-    })
-
 
     let buttonZero = document.getElementById("0");
     let buttonOne = document.getElementById("1");
