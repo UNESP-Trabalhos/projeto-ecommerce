@@ -116,9 +116,8 @@ input:focus{
 }
 
 .item-image {
-    width: 110px;
-    height: 110px;
-    background: #D3D3D3;
+    width: 120px;
+    height: 170px;
 }
 
 .item-description {

@@ -174,55 +174,6 @@ function filtrar(inicial, final){
     }
 }
 
-// FILTRANDO OS TOP 10 MAIS VENDIDOS 
-const filterTop = document.getElementById("top10")
-filterTop.addEventListener('click', ()=>{
-    limpar();
-    filtrar(4, 14);
-})
-
-// FILTRANDO OS MAIS PROMOÇÕES 
-const filterPromo = document.getElementById("promocoes")
-filterPromo.addEventListener('click', ()=>{
-    limpar();   
-    filtrar(3, 9);
-})
-
-// FILTRANDO OS ANIMAIS
-const filterAnimals = document.getElementById("animal")
-filterAnimals.addEventListener('click', ()=>{
-    limpar();
-    filtrar(9,12);
-})
-
-//FILTRANDO OS FILMES
-const filterFilmes = document.getElementById("filme")
-filterFilmes.addEventListener('click', ()=>{
-    limpar();
-    filtrar(0,3);
-})
-
-//FILTRANDO AS FRASES 
-const filterFrases = document.getElementById("frase")
-filterFrases.addEventListener('click', ()=>{
-    limpar();
-    filtrar(6,9);
-})
-
-//FILTRANDO OS Geometricos
-const filterGeometricos = document.getElementById("geometrico")
-filterGeometricos.addEventListener('click', ()=>{
-    limpar();
-    filtrar(12,15);
-})
-
-//FILTRANDO AS serie 
-const filterSeries = document.getElementById("serie")
-filterSeries.addEventListener('click', ()=>{
-    limpar();
-    filtrar(3,6);
-})
-
 function main(){
     for(i=0; i<20; i++){
         let divProduct = document.createElement("div");
@@ -251,7 +202,55 @@ function main(){
 
 window.addEventListener("load", function(event) {
 
-    filterButton.addEventListener('click', filter)
+    // FILTRANDO OS TOP 10 MAIS VENDIDOS 
+    const filterTop = document.getElementById("top10")
+    filterTop.addEventListener('click', ()=>{
+        limpar();
+        filtrar(4, 14);
+    })
+
+    // FILTRANDO OS MAIS PROMOÇÕES 
+    const filterPromo = document.getElementById("promocoes")
+    filterPromo.addEventListener('click', ()=>{
+        limpar();   
+        filtrar(3, 9);
+    })
+
+    // FILTRANDO OS ANIMAIS
+    const filterAnimals = document.getElementById("animal")
+    filterAnimals.addEventListener('click', ()=>{
+        limpar();
+        filtrar(9,12);
+    })
+
+    //FILTRANDO OS FILMES
+    const filterFilmes = document.getElementById("filme")
+    filterFilmes.addEventListener('click', ()=>{
+        limpar();
+        filtrar(0,3);
+    })
+
+    //FILTRANDO AS FRASES 
+    const filterFrases = document.getElementById("frase")
+    filterFrases.addEventListener('click', ()=>{
+        limpar();
+        filtrar(6,9);
+    })
+
+    //FILTRANDO OS Geometricos
+    const filterGeometricos = document.getElementById("geometrico")
+    filterGeometricos.addEventListener('click', ()=>{
+        limpar();
+        filtrar(12,15);
+    })
+
+    //FILTRANDO AS serie 
+    const filterSeries = document.getElementById("serie")
+    filterSeries.addEventListener('click', ()=>{
+        limpar();
+        filtrar(3,6);
+    })
+
 
     let buttonZero = document.getElementById("0");
     let buttonOne = document.getElementById("1");
@@ -268,11 +267,6 @@ window.addEventListener("load", function(event) {
     let buttonTwelve = document.getElementById("12");
     let buttonThirteen = document.getElementById("13");
     let buttonFourteen = document.getElementById("14");
-    let buttonFifteen = document.getElementById("15");
-    let buttonSixteen = document.getElementById("16");
-    let buttonSeventeen = document.getElementById("17");
-    let buttonEighteen = document.getElementById("18");
-    let buttonNineteen = document.getElementById("19");
 
     buttonZero.addEventListener('click', ()=>{
         if(buttonZero.textContent == "Adicionar ao Carrinho"){
@@ -281,7 +275,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonZero.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Nokia 2720A Celular Flip"
+            let produtoARemover = "Capitão America"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -292,7 +286,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonOne.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Nokia 1100 Gsm"
+            let produtoARemover = "Homem Aranha"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -303,7 +297,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonTwo.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "LG B220"
+            let produtoARemover = "Homem de Ferro"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -314,7 +308,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonThree.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Nokia 1661"
+            let produtoARemover = "Bob Esponja"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -325,7 +319,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonFour.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Nokia 5125"
+            let produtoARemover = "Os Simpsons"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -336,7 +330,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonFive.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Banana"
+            let produtoARemover = "Sherlock Holmes"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -347,7 +341,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonSix.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Maça"
+            let produtoARemover = "Frase Simpsons"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -358,7 +352,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonSeven.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Laranja"
+            let produtoARemover = "Frase Chorão"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -369,7 +363,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonEight.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Melancia"
+            let produtoARemover = "Frase Kruger"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -380,7 +374,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonNine.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Uva"
+            let produtoARemover = "Gato"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -391,7 +385,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonTen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Batman: Arkham City"
+            let produtoARemover = "Leão"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -402,7 +396,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonEleven.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Mortal Kombat: Deception"
+            let produtoARemover = "Lobo"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -413,7 +407,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonTwelve.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "The Elder Scrolls V: Skyrim"
+            let produtoARemover = "Triangulos Rose"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -424,7 +418,7 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonThirteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "FIFA 2021"
+            let produtoARemover = "Coração Geometrico"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
@@ -435,83 +429,17 @@ window.addEventListener("load", function(event) {
         }
         else{
             buttonFourteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Cyberpunk 2077"
+            let produtoARemover = "Triangulos Vitral"
             dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
         }
     })
-    buttonFifteen.addEventListener('click', ()=>{
-        if(buttonFifteen.textContent == "Adicionar ao Carrinho"){
-            buttonFifteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[15])
-        }
-        else{
-            buttonFifteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Camisa Bayern de Munique"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
-    })
-    buttonSixteen.addEventListener('click', ()=>{
-        if(buttonSixteen.textContent == "Adicionar ao Carrinho"){
-            buttonSixteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[16])
-        }
-        else{
-            buttonSixteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Camisa PSG"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
-    })
-    buttonSeventeen.addEventListener('click', ()=>{
-        if(buttonSeventeen.textContent == "Adicionar ao Carrinho"){
-            buttonSeventeen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[17])
-        }
-        else{
-            buttonSeventeen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Camisa Real Madrid"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
-    })
-    buttonEighteen.addEventListener('click', ()=>{
-        if(buttonEighteen.textContent == "Adicionar ao Carrinho"){
-            buttonEighteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[18])
-        }
-        else{
-            buttonEighteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Camisa Barcelona"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
-    })
-    buttonNineteen.addEventListener('click', ()=>{
-        if(buttonNineteen.textContent == "Adicionar ao Carrinho"){
-            buttonNineteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[19])
-        }
-        else{
-            buttonNineteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Camisa Chelsea"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
-    })
-
 });
 
 let botaoFinalizar = document.getElementById("carrinho")
 
 botaoFinalizar.addEventListener("click", ()=>{
-    dadosTransferidos.push("Rato")
     let enviarParaDetalhes = JSON.stringify(dadosTransferidos);
     console.log(enviarParaDetalhes)
 	sessionStorage.setItem('dados', enviarParaDetalhes);
     window.location.href = "./pages/cart.html"
-})
-
-
-let botaoTeste = document.getElementById("test")
-
-botaoTeste.addEventListener("click", ()=>{
-    let dados = JSON.parse(sessionStorage.getItem('dados'));
-    console.log(dados);
-	sessionStorage.setItem('dados', dados);
 })
