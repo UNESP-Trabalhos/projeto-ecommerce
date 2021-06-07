@@ -136,6 +136,19 @@ const produtos = document.getElementById("products-list")
 const filterButton = document.getElementById("menu")
 let dadosTransferidos = []
 
+// FUNCAO PARA ADICIONAR CARRINHO
+function adicionarRemover(button, data, i, text){
+    if(button.textContent == "Adicionar ao Carrinho"){
+        button.innerHTML = "Adicionado"
+        dadosTransferidos.push(data[i])
+    }
+    else{
+        button.innerHTML = "Adicionar ao Carrinho"
+        let produtoARemover = text
+        dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
+    }
+}
+
 // FUNCAO PARA LIMPAR
 
 function limpar(){
@@ -179,6 +192,48 @@ const filterTop = document.getElementById("top10")
 filterTop.addEventListener('click', ()=>{
     limpar();
     filtrar(4, 14);
+    
+    let buttonFour = document.getElementById("4");
+    let buttonFive = document.getElementById("5");
+    let buttonSix = document.getElementById("6");
+    let buttonSeven = document.getElementById("7");
+    let buttonEight = document.getElementById("8");
+    let buttonNine = document.getElementById("9");
+    let buttonTen = document.getElementById("10");
+    let buttonEleven = document.getElementById("11");
+    let buttonTwelve = document.getElementById("12");
+    let buttonThirteen = document.getElementById("13");
+
+    buttonFour.addEventListener('click', ()=>{
+        adicionarRemover(buttonFour, data, 4, "Os Simpsons")
+    })
+    buttonFive.addEventListener('click', ()=>{
+        adicionarRemover(buttonFive, data, 5, "Sherlock Holmes")        
+    })
+    buttonSix.addEventListener('click', ()=>{
+        adicionarRemover(buttonSix, data, 6, "Frase Simpsons")
+    })
+    buttonSeven.addEventListener('click', ()=>{
+        adicionarRemover(buttonSeven, data, 7, "Frase Chorão")
+    })
+    buttonEight.addEventListener('click', ()=>{
+        adicionarRemover(buttonEight, data, 8, "Frase Kruger")
+    })
+    buttonNine.addEventListener('click', ()=>{
+        adicionarRemover(buttonNine, data, 9, "Gato")
+    })
+    buttonTen.addEventListener('click', ()=>{
+        adicionarRemover(buttonTen, data, 10, "Leão")
+    })
+    buttonEleven.addEventListener('click', ()=>{
+        adicionarRemover(buttonEleven, data, 11, "Lobo")
+    })
+    buttonTwelve.addEventListener('click', ()=>{
+        adicionarRemover(buttonTwelve, data, 12, "Triangulos Rose")
+    })
+    buttonThirteen.addEventListener('click', ()=>{
+        adicionarRemover(buttonThirteen, data, 13, "Coração Geometrico")
+    })
 })
 
 // FILTRANDO OS MAIS PROMOÇÕES 
@@ -186,6 +241,31 @@ const filterPromo = document.getElementById("promocoes")
 filterPromo.addEventListener('click', ()=>{
     limpar();   
     filtrar(3, 9);
+    let buttonThree = document.getElementById("3");
+    let buttonFour = document.getElementById("4");
+    let buttonFive = document.getElementById("5");
+    let buttonSix = document.getElementById("6");
+    let buttonSeven = document.getElementById("7");
+    let buttonEight = document.getElementById("8");
+
+    buttonThree.addEventListener('click', ()=>{
+        adicionarRemover(buttonThree, data, 3, "Bob Esponja")
+    })
+    buttonFour.addEventListener('click', ()=>{
+        adicionarRemover(buttonFour, data, 4, "Os Simpsons")
+    })
+    buttonFive.addEventListener('click', ()=>{
+        adicionarRemover(buttonFive, data, 5, "Sherlock Holmes")        
+    })
+    buttonSix.addEventListener('click', ()=>{
+        adicionarRemover(buttonSix, data, 6, "Frase Simpsons")
+    })
+    buttonSeven.addEventListener('click', ()=>{
+        adicionarRemover(buttonSeven, data, 7, "Frase Chorão")
+    })
+    buttonEight.addEventListener('click', ()=>{
+        adicionarRemover(buttonEight, data, 8, "Frase Kruger")
+    })
 })
 
 // FILTRANDO OS ANIMAIS
@@ -193,6 +273,19 @@ const filterAnimals = document.getElementById("animal")
 filterAnimals.addEventListener('click', ()=>{
     limpar();
     filtrar(9,12);
+    let buttonNine = document.getElementById("9");
+    let buttonTen = document.getElementById("10");
+    let buttonEleven = document.getElementById("11");
+
+    buttonNine.addEventListener('click', ()=>{
+        adicionarRemover(buttonNine, data, 9, "Gato")
+    })
+    buttonTen.addEventListener('click', ()=>{
+        adicionarRemover(buttonTen, data, 10, "Leão")
+    })
+    buttonEleven.addEventListener('click', ()=>{
+        adicionarRemover(buttonEleven, data, 11, "Lobo")
+    })
 })
 
 //FILTRANDO OS FILMES
@@ -200,6 +293,19 @@ const filterFilmes = document.getElementById("filme")
 filterFilmes.addEventListener('click', ()=>{
     limpar();
     filtrar(0,3);
+    let buttonZero = document.getElementById("0");
+    let buttonOne = document.getElementById("1");
+    let buttonTwo = document.getElementById("2");
+
+    buttonZero.addEventListener('click', ()=>{
+        adicionarRemover(buttonZero, data, 0, "Capitão America")
+    })
+    buttonOne.addEventListener('click', ()=>{
+        adicionarRemover(buttonOne, data, 1, "Homem Aranha")
+    })
+    buttonTwo.addEventListener('click', ()=>{
+        adicionarRemover(buttonTwo, data, 2, "Homem de Ferro")
+    })
 })
 
 //FILTRANDO AS FRASES 
@@ -207,6 +313,19 @@ const filterFrases = document.getElementById("frase")
 filterFrases.addEventListener('click', ()=>{
     limpar();
     filtrar(6,9);
+    let buttonSix = document.getElementById("6");
+    let buttonSeven = document.getElementById("7");
+    let buttonEight = document.getElementById("8");
+
+    buttonSix.addEventListener('click', ()=>{
+        adicionarRemover(buttonSix, data, 6, "Frase Simpsons")
+    })
+    buttonSeven.addEventListener('click', ()=>{
+        adicionarRemover(buttonSeven, data, 7, "Frase Chorão")
+    })
+    buttonEight.addEventListener('click', ()=>{
+        adicionarRemover(buttonEight, data, 8, "Frase Kruger")
+    })
 })
 
 //FILTRANDO OS Geometricos
@@ -214,6 +333,20 @@ const filterGeometricos = document.getElementById("geometrico")
 filterGeometricos.addEventListener('click', ()=>{
     limpar();
     filtrar(12,15);
+    let buttonTwelve = document.getElementById("12");
+    let buttonThirteen = document.getElementById("13");
+    let buttonFourteen = document.getElementById("14");
+
+    buttonTwelve.addEventListener('click', ()=>{
+        adicionarRemover(buttonTwelve, data, 12, "Triangulos Rose")
+    })
+    buttonThirteen.addEventListener('click', ()=>{
+        adicionarRemover(buttonThirteen, data, 13, "Coração Geometrico")
+    })
+    buttonFourteen.addEventListener('click', ()=>{
+        adicionarRemover(buttonFourteen, data, 14, "Triangulos Vitral")
+    })
+
 })
 
 //FILTRANDO AS serie 
@@ -221,6 +354,18 @@ const filterSeries = document.getElementById("serie")
 filterSeries.addEventListener('click', ()=>{
     limpar();
     filtrar(3,6);
+    let buttonThree = document.getElementById("3");
+    let buttonFour = document.getElementById("4");
+    let buttonFive = document.getElementById("5");
+    buttonThree.addEventListener('click', ()=>{
+        adicionarRemover(buttonThree, data, 3, "Bob Esponja")
+    })
+    buttonFour.addEventListener('click', ()=>{
+        adicionarRemover(buttonFour, data, 4, "Os Simpsons")
+    })
+    buttonFive.addEventListener('click', ()=>{
+        adicionarRemover(buttonFive, data, 5, "Sherlock Holmes")
+    })     
 })
 
 function main(){
@@ -268,169 +413,49 @@ window.addEventListener("load", function(event) {
     let buttonFourteen = document.getElementById("14");
 
     buttonZero.addEventListener('click', ()=>{
-        if(buttonZero.textContent == "Adicionar ao Carrinho"){
-            buttonZero.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[0])
-        }
-        else{
-            buttonZero.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Capitão America"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonZero, data, 0, "Capitão America")
     })
     buttonOne.addEventListener('click', ()=>{
-        if(buttonOne.textContent == "Adicionar ao Carrinho"){
-            buttonOne.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[1])
-        }
-        else{
-            buttonOne.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Homem Aranha"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonOne, data, 1, "Homem Aranha")
     })
     buttonTwo.addEventListener('click', ()=>{
-        if(buttonTwo.textContent == "Adicionar ao Carrinho"){
-            buttonTwo.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[2])
-        }
-        else{
-            buttonTwo.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Homem de Ferro"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonTwo, data, 2, "Homem de Ferro")
     })
     buttonThree.addEventListener('click', ()=>{
-        if(buttonThree.textContent == "Adicionar ao Carrinho"){
-            buttonThree.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[3])
-        }
-        else{
-            buttonThree.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Bob Esponja"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonThree, data, 3, "Bob Esponja")
     })
     buttonFour.addEventListener('click', ()=>{
-        if(buttonFour.textContent == "Adicionar ao Carrinho"){
-            buttonFour.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[4])
-        }
-        else{
-            buttonFour.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Os Simpsons"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonFour, data, 4, "Os Simpsons")
     })
     buttonFive.addEventListener('click', ()=>{
-        if(buttonFive.textContent == "Adicionar ao Carrinho"){
-            buttonFive.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[5])
-        }
-        else{
-            buttonFive.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Sherlock Holmes"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonFive, data, 5, "Sherlock Holmes")        
     })
     buttonSix.addEventListener('click', ()=>{
-        if(buttonSix.textContent == "Adicionar ao Carrinho"){
-            buttonSix.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[6])
-        }
-        else{
-            buttonSix.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Frase Simpsons"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonSix, data, 6, "Frase Simpsons")
     })
     buttonSeven.addEventListener('click', ()=>{
-        if(buttonSeven.textContent == "Adicionar ao Carrinho"){
-            buttonSeven.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[7])
-        }
-        else{
-            buttonSeven.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Frase Chorão"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonSeven, data, 7, "Frase Chorão")
     })
     buttonEight.addEventListener('click', ()=>{
-        if(buttonEight.textContent == "Adicionar ao Carrinho"){
-            buttonEight.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[8])
-        }
-        else{
-            buttonEight.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Frase Kruger"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonEight, data, 8, "Frase Kruger")
     })
     buttonNine.addEventListener('click', ()=>{
-        if(buttonNine.textContent == "Adicionar ao Carrinho"){
-            buttonNine.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[9])
-        }
-        else{
-            buttonNine.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Gato"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonNine, data, 9, "Gato")
     })
     buttonTen.addEventListener('click', ()=>{
-        if(buttonTen.textContent == "Adicionar ao Carrinho"){
-            buttonTen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[10])
-        }
-        else{
-            buttonTen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Leão"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonTen, data, 10, "Leão")
     })
     buttonEleven.addEventListener('click', ()=>{
-        if(buttonEleven.textContent == "Adicionar ao Carrinho"){
-            buttonEleven.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[11])
-        }
-        else{
-            buttonEleven.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Lobo"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonEleven, data, 11, "Lobo")
     })
     buttonTwelve.addEventListener('click', ()=>{
-        if(buttonTwelve.textContent == "Adicionar ao Carrinho"){
-            buttonTwelve.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[12])
-        }
-        else{
-            buttonTwelve.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Triangulos Rose"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonTwelve, data, 12, "Triangulos Rose")
     })
     buttonThirteen.addEventListener('click', ()=>{
-        if(buttonThirteen.textContent == "Adicionar ao Carrinho"){
-            buttonThirteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[13])
-        }
-        else{
-            buttonThirteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Coração Geometrico"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonThirteen, data, 13, "Coração Geometrico")
     })
     buttonFourteen.addEventListener('click', ()=>{
-        if(buttonFourteen.textContent == "Adicionar ao Carrinho"){
-            buttonFourteen.innerHTML = "Adicionado"
-            dadosTransferidos.push(data[14])
-        }
-        else{
-            buttonFourteen.innerHTML = "Adicionar ao Carrinho"
-            let produtoARemover = "Triangulos Vitral"
-            dadosTransferidos = dadosTransferidos.filter(dadosTransferidos => dadosTransferidos.name != produtoARemover);
-        }
+        adicionarRemover(buttonFourteen, data, 14, "Triangulos Vitral")
     })
 });
 
@@ -449,3 +474,5 @@ botaoFinalizar.addEventListener("click", ()=>{
     sessionStorage.setItem('dados', enviarParaDetalhes);
     window.location.href = "./pages/cart.html"
 })
+
+
