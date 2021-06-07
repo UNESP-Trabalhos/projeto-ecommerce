@@ -117,8 +117,7 @@ span{
 }
   
 .dropdown-content a:hover {
-    border-color: rgba(0,0,0,0.1);
-    color: #f1f1f1;   
+    background-color: rgba(0,0,0,0.07);
 }
   
 #dropdown:hover .dropdown-content {display: block;}

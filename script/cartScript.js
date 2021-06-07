@@ -1,4 +1,5 @@
 let botaoVoltar = document.getElementById("voltar")
+const dados = JSON.parse(sessionStorage.getItem('dados'));
 
 botaoVoltar.addEventListener("click", ()=>{
     let dados = JSON.parse(sessionStorage.getItem('dados'));
@@ -47,17 +48,16 @@ botaoFinalizar.addEventListener('click', ()=>{
         let dados_selecionados = []
         dados_selecionados.push(dadosUsuario[0])
         let para_enviar = JSON.stringify(dados_selecionados);
-        console.log(para_enviar)
+        let paraEnviarDados = JSON.stringify(dados);
 		sessionStorage.setItem('meus_dados', para_enviar);
+		sessionStorage.setItem('produtos', paraEnviarDados);
         window.location.href = "./confirmation.html"
     }
 })
 
 function main(){
-    let dados = JSON.parse(sessionStorage.getItem('dados'));
     let Cardiv = document.getElementById("resume-data");
     let soma = 0
-    console.log(dados)
     if(dados.length == 0){
         Cardiv.innerHTML = `<h2>Seu Carrinho está Vazio</h2>`
     }
