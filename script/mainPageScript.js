@@ -439,7 +439,6 @@ let botaoFinalizar = document.getElementById("carrinho")
 
 botaoFinalizar.addEventListener("click", ()=>{
     let enviarParaDetalhes = JSON.stringify(dadosTransferidos);
-    console.log(enviarParaDetalhes)
 	sessionStorage.setItem('dados', enviarParaDetalhes);
     window.location.href = "./pages/cart.html"
 })

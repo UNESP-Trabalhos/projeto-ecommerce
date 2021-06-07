@@ -9,8 +9,7 @@ texto.innerHTML = `O Prazo para entrega é de ${aleatorio} dias! Obrigado pela C
 divFrete.appendChild(texto)
 
 let dados = JSON.parse(sessionStorage.getItem('meus_dados'));
+console.log(dados)
 
 divComprador.innerHTML = `Nome do Comprador: ${dados[0].Nome} <br> Endereço: ${dados[0].Endereco} <br>
-                        Cidade: ${dados[0].Cidade} <br> Estado: ${dados[0].Estado} <br>`
-
-
+                        Número: ${dados[0].Numero} <br> Cidade: ${dados[0].Cidade} <br> `
